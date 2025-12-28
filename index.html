@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Open in Browser</title>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<button onclick="breakFrame()">Open Link</button>
+
+<script>
+function breakFrame() {
+  const url = "https://singingfiles.com/show.php?l=0&u=2041729&id=57893"; // 🔗 YOUR LINK HERE
+
+  // If inside a webview / iframe, force top-level navigation
+  if (window.top !== window.self) {
+    window.top.location.href = url;
+  } else {
+    // Normal browser behavior
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+}
+</script>
+
+</body>
+</html>
